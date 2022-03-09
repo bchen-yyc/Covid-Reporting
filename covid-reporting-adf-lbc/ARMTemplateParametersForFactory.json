@@ -15,16 +15,10 @@
 			"value": "https://dlgen2lbc.dfs.core.windows.net"
 		},
 		"ls_http_github_covid19_properties_typeProperties_url": {
-			"value": "https://ecdc.blob.core.windows.net"
+			"value": "@{linkedService().surceBaseURL}"
 		},
 		"etrigger_properties_typeProperties_scope": {
 			"value": "/subscriptions/f1519513-c565-4fcb-9f60-1289d6fb8289/resourceGroups/covid-reporting-rg/providers/Microsoft.Storage/storageAccounts/salbc"
-		},
-		"tr_ingest_hostpital_admissions_data_properties_pl_ingest_ecdc_data_parameters_sourceRelativeURL": {
-			"value": "covid19/hospital_admissions.csv"
-		},
-		"tr_ingest_hostpital_admissions_data_properties_pl_ingest_ecdc_data_parameters_sinkFileName": {
-			"value": "hospital_admissions.csv"
 		}
 	}
 }
