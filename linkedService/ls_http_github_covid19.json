@@ -9,7 +9,7 @@
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "https://ecdc.blob.core.windows.net",
+			"url": "@{linkedService().surceBaseURL}",
 			"enableServerCertificateValidation": false,
 			"authenticationType": "Anonymous"
 		}
