@@ -14,6 +14,9 @@
 		"ls_adls_covidreportingdl_properties_typeProperties_url": {
 			"value": "https://dlgen2lbc.dfs.core.windows.net"
 		},
+		"etrigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/f1519513-c565-4fcb-9f60-1289d6fb8289/resourceGroups/covid-reporting-rg/providers/Microsoft.Storage/storageAccounts/salbc"
+		},
 		"containerUri": {
 			"value": ""
 		},
