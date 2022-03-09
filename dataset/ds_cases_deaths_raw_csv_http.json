@@ -17,6 +17,11 @@
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "<!DOCTYPE html>",
+				"type": "String"
+			}
+		]
 	}
 }
