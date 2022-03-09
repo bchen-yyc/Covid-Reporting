@@ -21,11 +21,19 @@
 		},
 		"ls_http_github_covid19_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://raw.githubusercontent.com"
+			"defaultValue": "https://ecdc.blob.core.windows.net"
 		},
 		"etrigger_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/f1519513-c565-4fcb-9f60-1289d6fb8289/resourceGroups/covid-reporting-rg/providers/Microsoft.Storage/storageAccounts/salbc"
+		},
+		"tr_ingest_hostpital_admissions_data_properties_pl_ingest_ecdc_data_parameters_sourceRelativeURL": {
+			"type": "string",
+			"defaultValue": "covid19/hospital_admissions.csv"
+		},
+		"tr_ingest_hostpital_admissions_data_properties_pl_ingest_ecdc_data_parameters_sinkFileName": {
+			"type": "string",
+			"defaultValue": "hospital_admissions.csv"
 		},
 		"containerUri": {
 			"type": "string",
@@ -68,6 +76,12 @@
 					},
 					"etrigger_properties_typeProperties_scope": {
 						"value": "[parameters('etrigger_properties_typeProperties_scope')]"
+					},
+					"tr_ingest_hostpital_admissions_data_properties_pl_ingest_ecdc_data_parameters_sourceRelativeURL": {
+						"value": "[parameters('tr_ingest_hostpital_admissions_data_properties_pl_ingest_ecdc_data_parameters_sourceRelativeURL')]"
+					},
+					"tr_ingest_hostpital_admissions_data_properties_pl_ingest_ecdc_data_parameters_sinkFileName": {
+						"value": "[parameters('tr_ingest_hostpital_admissions_data_properties_pl_ingest_ecdc_data_parameters_sinkFileName')]"
 					}
 				}
 			},
