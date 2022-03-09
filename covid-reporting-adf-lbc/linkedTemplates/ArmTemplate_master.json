@@ -19,6 +19,10 @@
 			"type": "string",
 			"defaultValue": "https://dlgen2lbc.dfs.core.windows.net"
 		},
+		"ls_http_github_covid19_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://raw.githubusercontent.com"
+		},
 		"etrigger_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/f1519513-c565-4fcb-9f60-1289d6fb8289/resourceGroups/covid-reporting-rg/providers/Microsoft.Storage/storageAccounts/salbc"
@@ -58,6 +62,9 @@
 					},
 					"ls_adls_covidreportingdl_properties_typeProperties_url": {
 						"value": "[parameters('ls_adls_covidreportingdl_properties_typeProperties_url')]"
+					},
+					"ls_http_github_covid19_properties_typeProperties_url": {
+						"value": "[parameters('ls_http_github_covid19_properties_typeProperties_url')]"
 					},
 					"etrigger_properties_typeProperties_scope": {
 						"value": "[parameters('etrigger_properties_typeProperties_scope')]"
