@@ -60,6 +60,16 @@
 				]
 			}
 		],
+		"variables": {
+			"sourceRelativeURL": {
+				"type": "String",
+				"defaultValue": "covid19/hospital_admissions.csv"
+			},
+			"sinkFileName": {
+				"type": "String",
+				"defaultValue": "hospital_admissions.csv"
+			}
+		},
 		"annotations": []
 	}
 }
