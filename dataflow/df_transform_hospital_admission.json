@@ -42,6 +42,15 @@
 				},
 				{
 					"name": "derivedColumn"
+				},
+				{
+					"name": "aggDimDate"
+				},
+				{
+					"name": "joinWithDate"
+				},
+				{
+					"name": "pivotWeekly"
 				}
 			],
 			"scriptLines": [
@@ -113,7 +122,25 @@
 				"     skipDuplicateMapOutputs: true) ~> selectRequiredFields",
 				"selectRequiredFields split(startsWith(indicator, 'Weekly'),",
 				"     disjoint: false) ~> splitDailyWeekly@(Weekly, Daily)",
-				"sourceDimDate derive(ecdc_year_week = year+'-W'+lpad(week_of_year, 2, '0')) ~> derivedColumn"
+				"sourceDimDate derive(ecdc_year_week = year+'-W'+lpad(week_of_year, 2, '0')) ~> derivedColumn",
+				"derivedColumn aggregate(groupBy(ecdc_year_week),",
+				"     week_start_date = min(date),",
+				"          week_end_date = max(date)) ~> aggDimDate",
+				"splitDailyWeekly@Weekly, aggDimDate join(reported_year_week == ecdc_year_week,",
+				"     joinType:'inner',",
+				"     broadcast: 'auto')~> joinWithDate",
+				"joinWithDate pivot(groupBy(country,",
+				"          country_code_2_digit,",
+				"          country_code_3_digit,",
+				"          population,",
+				"          reported_year_week,",
+				"          week_start_date,",
+				"          week_end_date,",
+				"          source),",
+				"     pivotBy(indicator),",
+				"     count = sum(value),",
+				"     columnNaming: '$N$V',",
+				"     lateral: true) ~> pivotWeekly"
 			]
 		}
 	}
